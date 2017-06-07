@@ -4,8 +4,9 @@
 }
 
 body {
-  margin: 0;
   background-color: pink;
+  width: 960px;
+  margin: 0 auto;
 }
 
 header {
@@ -17,7 +18,7 @@ header {
 }
 
 h1 {
-  font-size: 100px;
+  font-size: 85px;
   margin: 30px;
   text-align: center;
   font-weight: 900;
@@ -35,9 +36,8 @@ h4 {
 
 article {
   display: inline-block;
-  min-width: 32%;
-  max-width: 32%;
-  margin-left: 9px;
+  min-width: 32.92%;
+  max-width: 32.92%;
   vertical-align: top;
   justify-content: center;
   background-color: white;
@@ -51,10 +51,11 @@ h2 {
 }
 
 p {
-  margin: 0px 30px 30px 30px;
+  margin: 0px 30px 0px 30px;
   text-align: justify;
 }
 
-ul {
-  margin: 0px 30px 0px 20px;
+ul
+{
+  margin: 0px 30px 0px 30px;
 }

@@ -1,4 +1,6 @@
-//User Name
+'use strict';
+
+//ask user their name
 var userName = prompt('Hi! What\'s your name?');
   if (userName) {alert('Excellent meeting you, ' + userName + '. Let\'s play a game about ME!');
   console.log('When asked their name, the user responded with ' + userName);
@@ -9,6 +11,7 @@ var userName = prompt('Hi! What\'s your name?');
 
 var score = 0;
 
+//ask user five yes or no questions about me
 //Question 1
 var hometown = prompt('YES or NO: Did I grow up in Chicago?');
   if (hometown.toUpperCase() === 'YES' || hometown.toUpperCase() === 'Y') {
@@ -74,7 +77,7 @@ var bungalow = prompt('YES or NO: My favorite style of architecture is American 
     alert('Correct! While I am currently in the process of restoring a Craftsman Bungalow and can definitely see its architectural merits, I still prefer midcentury modern!');
     score++;
   } else {
-    alert('I don\'t know waht you mean! While I am currently in the process of restoring a Craftsman Bungalow and can definitely see its architectural merits, I still prefer midcentury modern!');
+    alert('I don\'t know what you mean! While I am currently in the process of restoring a Craftsman Bungalow and can definitely see its architectural merits, I still prefer midcentury modern!');
   }
 
   alert('You answered ' + score + '/5 questions correctly!');
