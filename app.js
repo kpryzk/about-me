@@ -1,6 +1,6 @@
 'use strict';
 
- //ask user their name
+//  ask user their name
 var userName = prompt('Hi! What\'s your name?');
 if (userName) {alert('Excellent meeting you, ' + userName + '. Let\'s play a game about ME!');
   console.log('When asked their name, the user responded with ' + userName);
@@ -11,8 +11,8 @@ if (userName) {alert('Excellent meeting you, ' + userName + '. Let\'s play a gam
 
 var score = 0;
 
- //ask user five yes or no questions about me
- //Question 1
+//  ask user five yes or no questions about me
+//  Question 1
 var hometown = prompt('YES or NO: Did I grow up in Chicago?');
 if (hometown.toUpperCase() === 'YES' || hometown.toUpperCase() === 'Y') {
   alert ('Sorry, incorrect! While I lived in Chicago for 5 years, I grew up in Puyallup!');
@@ -26,7 +26,7 @@ if (hometown.toUpperCase() === 'YES' || hometown.toUpperCase() === 'Y') {
   console.log('When asked if I grew up in Chicago, the user entered unrecognized input.');
 }
 
- //Question 2
+//  Question 2
 var favAnimal = prompt('YES or NO: Is my favorite animal a wombat?');
 if (favAnimal.toUpperCase() === 'YES' || favAnimal.toUpperCase() === 'Y') {
   alert ('Correct! It is very hard to choose as I love all animals, but I find the wombat especially adorable. I was lucky to see several while in Australia!');
@@ -40,7 +40,7 @@ if (favAnimal.toUpperCase() === 'YES' || favAnimal.toUpperCase() === 'Y') {
   console.log('When asked if my favorite animal is a wombat, the user entered unrecognized input.');
 }
 
- //Question 3
+//  Question 3
 var favFood = prompt('YES or NO: Is my favorite food cauliflower?');
 if (favFood.toUpperCase() === 'YES' || favFood.toUpperCase() === 'Y') {
   alert('Correct! I love experimenting with recreating childhood favorite baked goods with vegan ingredients, but I could eat roasted cauliflower every day!');
@@ -54,7 +54,7 @@ if (favFood.toUpperCase() === 'YES' || favFood.toUpperCase() === 'Y') {
   console.log('When asked if my favorite food is cauliflower, the user entered unrecognized input.');
 }
 
- //Question 4
+//  Question 4
 var firstJob = prompt('YES or NO: Was my first job at a fast food chain?');
 if (firstJob.toUpperCase() === 'YES' || firstJob.toUpperCase() === 'Y') {
   alert('Sorry, incorrect! My first job as a teenager was working at the local library! I had grown up visiting at least once a week, so getting paid to be surrounded by books felt like a dream!');
@@ -68,7 +68,7 @@ if (firstJob.toUpperCase() === 'YES' || firstJob.toUpperCase() === 'Y') {
   console.log('When asked if my first job was at a fast food chain, the user entered unrecognized input.');
 }
 
- //Question 5
+//  Question 5
 var bungalow = prompt('YES or NO: My favorite style of architecture is American Craftsman.');
 if (bungalow.toUpperCase() === 'YES' || bungalow.toUpperCase() === 'Y'){
   alert('Sorry, incorrect! While I am currently in the process of restoring a Craftsman Bungalow and can definitely see its architectural merits, I still prefer midcentury modern!');
@@ -79,4 +79,45 @@ if (bungalow.toUpperCase() === 'YES' || bungalow.toUpperCase() === 'Y'){
   alert('I don\'t know what you mean! While I am currently in the process of restoring a Craftsman Bungalow and can definitely see its architectural merits, I still prefer midcentury modern!');
 }
 
-alert('You answered ' + score + '/7 questions correctly!');
+ //Question 6
+var numberGuesses = 4;
+var secretNumber = 5;
+
+while (numberGuesses > 0) {
+  var yourGuess = parseInt(prompt('What\'s my favorite number?'));
+  if (yourGuess === secretNumber) {
+    alert('Correct! That is my favorite number!');
+    numberGuesses = 0;
+    score++;
+  } else if (yourGuess > secretNumber) {
+    numberGuesses--;
+    alert('Your number is too high! You have ' + numberGuesses + ' guesses left.');
+  } else if (yourGuess < secretNumber) {
+    numberGuesses--;
+    alert('Too low. You have ' + numberGuesses + ' guesses left.');
+  }
+}
+
+//Question 7
+var placesLived = ['PUYALLUP', 'TACOMA', 'CHICAGO', 'PORTLAND', 'BERLIN'];
+var tries = 6;
+
+while (tries > 0) {
+  var yourGuess = prompt('I\'ve lived in five cities - name one!').toUpperCase();
+  for (var i = 0; i < placesLived.length; i++) {
+    if (placesLived[i] === yourGuess) {
+      alert('Correct, I\'ve lived in Puyallup, Tacoma, Chicago, Portland, and Berlin!');
+      var tries = -1;
+      i = placesLived.length;
+      score++;
+    }
+  }
+  if (tries > 0) {
+    tries--;
+    alert('Wrong! You have ' + tries + ' guesses left!');
+  } if (tries === 0){
+    alert ('Sorry, you\'re out of guesses! I\'ve lived in Puyallup, Tacoma, Chicago, Portland, and Berlin!');
+  }
+}
+
+alert('Thanks for playing, ' + userName + '! You got ' + score + ' out of 7 answers correct!');
