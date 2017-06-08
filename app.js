@@ -97,16 +97,15 @@ function bungalow() {
 }
 bungalow();
 
- //Question 6
+//Question 6
 function secretNumber() {
   var numberGuesses = 4;
   var secretNumber = 5;
-
   while (numberGuesses > 0) {
     var yourGuess = parseInt(prompt('What\'s my favorite number?'));
     if (yourGuess === secretNumber) {
       alert('Correct! That is my favorite number!');
-      numberGuesses = -1;
+      numberGuesses = 0;
       score++;
     } else if (yourGuess > secretNumber) {
       numberGuesses--;
@@ -114,15 +113,14 @@ function secretNumber() {
     } else if (yourGuess < secretNumber) {
       numberGuesses--;
       alert('Too low. You have ' + numberGuesses + ' guesses left.');
-    } if (counter === 0) {
+    } else if (numberGuesses === 0) {
       alert('Sorry, you are out of guesses. My favorite number is 5.');
     }
   }
 }
 secretNumber();
 
-//Question 7
-
+// //Question 7
 function placesLived() {
   var placesLived = ['PUYALLUP', 'TACOMA', 'CHICAGO', 'PORTLAND', 'BERLIN'];
   var tries = 6;
