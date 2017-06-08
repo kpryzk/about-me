@@ -87,7 +87,7 @@ while (numberGuesses > 0) {
   var yourGuess = parseInt(prompt('What\'s my favorite number?'));
   if (yourGuess === secretNumber) {
     alert('Correct! That is my favorite number!');
-    numberGuesses = 0;
+    numberGuesses = -1;
     score++;
   } else if (yourGuess > secretNumber) {
     numberGuesses--;
@@ -95,6 +95,8 @@ while (numberGuesses > 0) {
   } else if (yourGuess < secretNumber) {
     numberGuesses--;
     alert('Too low. You have ' + numberGuesses + ' guesses left.');
+  } if (counter === 0) {
+    alert('Sorry, you are out of guesses. My favorite number is 5.');
   }
 }
 
@@ -104,6 +106,7 @@ var tries = 6;
 
 while (tries > 0) {
   var yourGuess = prompt('I\'ve lived in five cities - name one!').toUpperCase();
+  tries--;
   for (var i = 0; i < placesLived.length; i++) {
     if (placesLived[i] === yourGuess) {
       alert('Correct, I\'ve lived in Puyallup, Tacoma, Chicago, Portland, and Berlin!');
@@ -113,7 +116,6 @@ while (tries > 0) {
     }
   }
   if (tries > 0) {
-    tries--;
     alert('Wrong! You have ' + tries + ' guesses left!');
   } if (tries === 0){
     alert ('Sorry, you\'re out of guesses! I\'ve lived in Puyallup, Tacoma, Chicago, Portland, and Berlin!');
