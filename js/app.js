@@ -145,4 +145,4 @@ function placesLived() {
 }
 placesLived();
 
-alert('Thanks for playing, ' + userName + '! You got ' + score + ' out of 7 answers correct!');
+alert('Thanks for playing! You got ' + score + ' out of 7 answers correct!');
